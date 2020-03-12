@@ -1,0 +1,69 @@
+# This file contains all git aliases.
+
+# Git aliases.
+alias g="git"
+# Lists the branches which match the regex.
+gb () {
+    g branch --list $@
+}
+# Pretty prints the git log as a tree.
+gl () {
+    g log --pretty=format:"%Cred%h%Creset | %Cgreen%<(25)%an%Creset | %s"
+}
+# Gets the current git status.
+gs () {
+    g status
+}
+# Checkout master
+gcm () {
+    g checkout master
+}
+# Pull + Rebase
+gpr () {
+    g pull --rebase
+}
+
+gdc () {
+    g diff --cached
+}
+
+ga () {
+  g add -A
+}
+
+gau () {
+  g add -u
+}
+
+gc () {
+  git commit
+}
+
+alias gch="git checkout"
+
+gca () {
+  git commit --amend
+}
+
+gdv () {
+  g diff | vim -
+}
+
+# Supply argument with file name if git diff on file desired.
+# Else does git diff for all files.
+gd () {
+  git diff $1
+}
+
+gdn () {
+  git diff --name-status
+}
+
+gp () {
+  git pull
+}
+
+gpr () {
+  git pull --rebase
+}
+
